@@ -1,0 +1,24 @@
+[9.779s] Invoking command in '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/src/lab3': PYTHONPATH=/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/lab3 build --build-base /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/build install --record /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/install.log --single-version-externally-managed install_data
+[11.069s] running egg_info
+[11.084s] writing ../../build/lab3/lab3.egg-info/PKG-INFO
+[11.084s] writing dependency_links to ../../build/lab3/lab3.egg-info/dependency_links.txt
+[11.084s] writing entry points to ../../build/lab3/lab3.egg-info/entry_points.txt
+[11.118s] writing requirements to ../../build/lab3/lab3.egg-info/requires.txt
+[11.132s] writing top-level names to ../../build/lab3/lab3.egg-info/top_level.txt
+[11.150s] reading manifest file '../../build/lab3/lab3.egg-info/SOURCES.txt'
+[11.158s] writing manifest file '../../build/lab3/lab3.egg-info/SOURCES.txt'
+[11.159s] running build
+[11.205s] running build_py
+[11.206s] copying lab3/navigate_maze.py -> /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/build/lib/lab3
+[11.216s] running install
+[11.216s] running install_lib
+[11.223s] copying /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/build/lib/lab3/navigate_maze.py -> /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages/lab3
+[11.234s] byte-compiling /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages/lab3/navigate_maze.py to navigate_maze.cpython-310.pyc
+[11.241s] running install_data
+[11.242s] running install_egg_info
+[11.251s] removing '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages/lab3-0.0.0-py3.10.egg-info' (and everything under it)
+[11.258s] Copying ../../build/lab3/lab3.egg-info to /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages/lab3-0.0.0-py3.10.egg-info
+[11.266s] running install_scripts
+[11.398s] Installing navigate_maze script to /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/lab3
+[11.406s] writing list of installed files to '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/install.log'
+[11.595s] Invoked command in '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/src/lab3' returned '0': PYTHONPATH=/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/lab3 build --build-base /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/build install --record /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/install.log --single-version-externally-managed install_data
