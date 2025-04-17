@@ -1,0 +1,115 @@
+[0.000000] (-) TimerEvent: {}
+[0.001692] (lab2) JobQueued: {'identifier': 'lab2', 'dependencies': OrderedDict()}
+[0.002027] (lab3) JobQueued: {'identifier': 'lab3', 'dependencies': OrderedDict()}
+[0.002091] (lab2) JobStarted: {'identifier': 'lab2'}
+[0.124452] (-) TimerEvent: {}
+[0.160045] (lab3) JobStarted: {'identifier': 'lab3'}
+[0.271606] (-) TimerEvent: {}
+[0.393192] (-) TimerEvent: {}
+[0.524734] (-) TimerEvent: {}
+[0.628003] (-) TimerEvent: {}
+[0.732570] (-) TimerEvent: {}
+[0.844099] (-) TimerEvent: {}
+[0.960612] (-) TimerEvent: {}
+[1.065528] (-) TimerEvent: {}
+[1.178589] (-) TimerEvent: {}
+[1.299269] (-) TimerEvent: {}
+[1.405565] (-) TimerEvent: {}
+[1.512848] (-) TimerEvent: {}
+[1.626748] (-) TimerEvent: {}
+[1.743643] (-) TimerEvent: {}
+[1.856638] (-) TimerEvent: {}
+[1.967943] (-) TimerEvent: {}
+[2.080732] (-) TimerEvent: {}
+[2.196469] (-) TimerEvent: {}
+[2.305786] (-) TimerEvent: {}
+[2.413163] (-) TimerEvent: {}
+[2.525987] (-) TimerEvent: {}
+[2.642658] (-) TimerEvent: {}
+[2.758670] (-) TimerEvent: {}
+[2.871694] (-) TimerEvent: {}
+[2.992922] (-) TimerEvent: {}
+[3.117060] (-) TimerEvent: {}
+[3.229847] (-) TimerEvent: {}
+[3.336179] (-) TimerEvent: {}
+[3.436881] (-) TimerEvent: {}
+[3.540736] (-) TimerEvent: {}
+[3.667865] (-) TimerEvent: {}
+[4.350799] (-) TimerEvent: {}
+[4.508068] (-) TimerEvent: {}
+[4.621713] (-) TimerEvent: {}
+[4.751623] (-) TimerEvent: {}
+[4.854592] (-) TimerEvent: {}
+[4.964917] (-) TimerEvent: {}
+[5.563950] (-) TimerEvent: {}
+[5.708906] (-) TimerEvent: {}
+[5.885138] (-) TimerEvent: {}
+[6.072601] (-) TimerEvent: {}
+[6.185867] (-) TimerEvent: {}
+[6.321547] (-) TimerEvent: {}
+[6.526150] (-) TimerEvent: {}
+[6.663525] (-) TimerEvent: {}
+[6.805276] (-) TimerEvent: {}
+[6.821014] (lab2) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/lab2', 'build', '--build-base', '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab2/build', 'install', '--record', '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab2/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/src/lab2', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'SVGA_VGPU10': '0', 'USER': 'duttaishan01', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/duttaishan01', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3040', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'LOGNAME': 'duttaishan01', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'duttaishan01', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/duttaishan01/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/MONEYFOLDER:@/tmp/.ICE-unix/1461,unix/MONEYFOLDER:/tmp/.ICE-unix/1461', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/ee1abd01_f06f_4b7f_8b70_b3cb15cc4764', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.T5FQ52', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.112', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '4', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab2', 'TURTLEBOT3_MODEL': 'waffle_Pi', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab2/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[6.889687] (lab3) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/lab3', 'build', '--build-base', '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/build', 'install', '--record', '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/src/lab3', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'SVGA_VGPU10': '0', 'USER': 'duttaishan01', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/duttaishan01', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'SYSTEMD_EXEC_PID': '3040', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'LOGNAME': 'duttaishan01', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'duttaishan01', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/duttaishan01/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/MONEYFOLDER:@/tmp/.ICE-unix/1461,unix/MONEYFOLDER:/tmp/.ICE-unix/1461', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/ee1abd01_f06f_4b7f_8b70_b3cb15cc4764', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.T5FQ52', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.112', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '4', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3', 'TURTLEBOT3_MODEL': 'waffle_Pi', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[7.532097] (-) TimerEvent: {}
+[7.638205] (-) TimerEvent: {}
+[7.769382] (-) TimerEvent: {}
+[8.004905] (lab2) StdoutLine: {'line': b'running egg_info\n'}
+[8.009138] (-) TimerEvent: {}
+[8.010259] (lab2) StdoutLine: {'line': b'writing ../../build/lab2/lab2.egg-info/PKG-INFO\n'}
+[8.016024] (lab2) StdoutLine: {'line': b'writing dependency_links to ../../build/lab2/lab2.egg-info/dependency_links.txt\n'}
+[8.016538] (lab2) StdoutLine: {'line': b'writing entry points to ../../build/lab2/lab2.egg-info/entry_points.txt\n'}
+[8.016874] (lab2) StdoutLine: {'line': b'writing requirements to ../../build/lab2/lab2.egg-info/requires.txt\n'}
+[8.017204] (lab2) StdoutLine: {'line': b'writing top-level names to ../../build/lab2/lab2.egg-info/top_level.txt\n'}
+[8.023278] (lab2) StdoutLine: {'line': b"reading manifest file '../../build/lab2/lab2.egg-info/SOURCES.txt'\n"}
+[8.026407] (lab2) StdoutLine: {'line': b"writing manifest file '../../build/lab2/lab2.egg-info/SOURCES.txt'\n"}
+[8.028756] (lab2) StdoutLine: {'line': b'running build\n'}
+[8.029176] (lab2) StdoutLine: {'line': b'running build_py\n'}
+[8.030140] (lab2) StdoutLine: {'line': b'running install\n'}
+[8.030694] (lab2) StdoutLine: {'line': b'running install_lib\n'}
+[8.034966] (lab2) StdoutLine: {'line': b'running install_data\n'}
+[8.036553] (lab2) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.042929] (lab2) StdoutLine: {'line': b"removing '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab2/lib/python3.10/site-packages/lab2-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[8.045895] (lab2) StdoutLine: {'line': b'Copying ../../build/lab2/lab2.egg-info to /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab2/lib/python3.10/site-packages/lab2-0.0.0-py3.10.egg-info\n'}
+[8.050875] (lab2) StdoutLine: {'line': b'running install_scripts\n'}
+[8.075149] (lab3) StdoutLine: {'line': b'running egg_info\n'}
+[8.113879] (-) TimerEvent: {}
+[8.152074] (lab3) StdoutLine: {'line': b'writing ../../build/lab3/lab3.egg-info/PKG-INFO\n'}
+[8.171692] (lab3) StdoutLine: {'line': b'writing dependency_links to ../../build/lab3/lab3.egg-info/dependency_links.txt\n'}
+[8.191751] (lab3) StdoutLine: {'line': b'writing entry points to ../../build/lab3/lab3.egg-info/entry_points.txt\n'}
+[8.214469] (-) TimerEvent: {}
+[8.214808] (lab3) StdoutLine: {'line': b'writing requirements to ../../build/lab3/lab3.egg-info/requires.txt\n'}
+[8.268472] (lab3) StdoutLine: {'line': b'writing top-level names to ../../build/lab3/lab3.egg-info/top_level.txt\n'}
+[8.282403] (lab3) StdoutLine: {'line': b"reading manifest file '../../build/lab3/lab3.egg-info/SOURCES.txt'\n"}
+[8.296524] (lab3) StdoutLine: {'line': b"writing manifest file '../../build/lab3/lab3.egg-info/SOURCES.txt'\n"}
+[8.300610] (lab3) StdoutLine: {'line': b'running build\n'}
+[8.304641] (lab3) StdoutLine: {'line': b'running build_py\n'}
+[8.308766] (lab3) StdoutLine: {'line': b'copying lab3/navigate_maze.py -> /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/build/lib/lab3\n'}
+[8.313868] (lab3) StdoutLine: {'line': b'running install\n'}
+[8.315889] (-) TimerEvent: {}
+[8.324645] (lab3) StdoutLine: {'line': b'running install_lib\n'}
+[8.369655] (lab3) StdoutLine: {'line': b'copying /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/build/lib/lab3/navigate_maze.py -> /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages/lab3\n'}
+[8.375059] (lab3) StdoutLine: {'line': b'byte-compiling /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages/lab3/navigate_maze.py to navigate_maze.cpython-310.pyc\n'}
+[8.380052] (lab3) StdoutLine: {'line': b'running install_data\n'}
+[8.381386] (lab3) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.407287] (lab3) StdoutLine: {'line': b"removing '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages/lab3-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[8.426817] (-) TimerEvent: {}
+[8.482988] (lab2) StdoutLine: {'line': b'Installing move_node script to /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab2/lib/lab2\n'}
+[8.496749] (lab2) StdoutLine: {'line': b"writing list of installed files to '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab2/install.log'\n"}
+[8.502125] (lab3) StdoutLine: {'line': b'Copying ../../build/lab3/lab3.egg-info to /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/python3.10/site-packages/lab3-0.0.0-py3.10.egg-info\n'}
+[8.502890] (lab3) StdoutLine: {'line': b'running install_scripts\n'}
+[8.558168] (-) TimerEvent: {}
+[8.734856] (-) TimerEvent: {}
+[8.768201] (lab3) StdoutLine: {'line': b'Installing navigate_maze script to /home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/install/lab3/lib/lab3\n'}
+[8.768705] (lab3) StdoutLine: {'line': b"writing list of installed files to '/home/duttaishan01/robotics_course/ENAE450_lab/turtlebot3_ws/build/lab3/install.log'\n"}
+[8.842515] (-) TimerEvent: {}
+[8.896080] (lab2) CommandEnded: {'returncode': 0}
+[8.951853] (-) TimerEvent: {}
+[9.093148] (-) TimerEvent: {}
+[9.093735] (lab2) JobEnded: {'identifier': 'lab2', 'rc': 0}
+[9.142638] (lab3) CommandEnded: {'returncode': 0}
+[9.213752] (-) TimerEvent: {}
+[9.340226] (lab3) JobEnded: {'identifier': 'lab3', 'rc': 0}
+[9.357010] (-) TimerEvent: {}
+[9.358835] (-) EventReactorShutdown: {}

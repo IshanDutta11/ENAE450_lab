@@ -10,29 +10,57 @@ class NavigateMaze(Node):
 
     def __init__(self):
         super().__init__('navigate_maze')
-        self.subscription = self.create_subscription(LaserScan, 'scan', self.listener_callback, 10)
+        self.subscription = self.create_subscription(LaserScan, 'scan', self.retreive_distances, 10)
         self.publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
         timer_period = 1  # seconds
         self.timer = self.create_timer(timer_period, self.move_command)
 
-        self.distance=[]
+        self.stopping_distance = 0.2
+        self.distances=[]
 
     def move_command(self):
-        msg = Twist()
 
         # Length of list is 720
-        # 0: -pi    719: pi  360: 0
-        if(len(self.distance) > 0 and self.distance[360] > 0.2):
-            msg.linear.x = 0.3
-            print("move")
-        else:
-            msg.linear.x = 0.0
-            print("dont move")
+        # index: axes
+        # 0: -y (-pi)
+        # 180: -x (-pi/2)
+        # 360: +y (0)
+        # 540: +x (pi/2)
+        # 719: -y  (pi)
 
+        # +y
+        # ^
+        # |
+        # |
+        #  - - - > +x
+
+        msg = Twist()
+
+        if(len(self.distances) < 0):
+            print("Distance not detected")
+            msg.linear.x = 0.0
+        else:
+            if(self.distances[360] > self.stopping_distance):
+                msg.linear.x = 0.3
+                print("move")
+            else:
+                msg.linear.x = 0.0
+                
+                if(self.distances[180] > self.distances[540]):
+                    msg.linear.z = 3.14
+                    self.publisher_.publish(msg)
+
+                else:
+                    msg.linear.z = -3.14
+                    self.publisher_.publish(msg)
+                
+                time.sleep(1)
+                msg.linear.z = 0
+                
         self.publisher_.publish(msg)
 
-    def listener_callback(self, msg):
-        self.distance = msg.ranges
+    def retreive_distances(self, msg):
+        self.distances = msg.ranges
 
 def main(args=None):
     rclpy.init(args=args)
