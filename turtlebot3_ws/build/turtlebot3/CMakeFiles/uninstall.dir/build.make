@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/src/turtlebot3/turtlebot3
+CMAKE_SOURCE_DIR = /home/duttaishan01/turtlebot3_ws/src/turtlebot3/turtlebot3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/turtlebot3
+CMAKE_BINARY_DIR = /home/duttaishan01/turtlebot3_ws/build/turtlebot3
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/turtlebot3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/src/turtlebot3/turtlebot3 /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/src/turtlebot3/turtlebot3 /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/turtlebot3 /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/turtlebot3 /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/turtlebot3/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/duttaishan01/turtlebot3_ws/build/turtlebot3 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/duttaishan01/turtlebot3_ws/src/turtlebot3/turtlebot3 /home/duttaishan01/turtlebot3_ws/src/turtlebot3/turtlebot3 /home/duttaishan01/turtlebot3_ws/build/turtlebot3 /home/duttaishan01/turtlebot3_ws/build/turtlebot3 /home/duttaishan01/turtlebot3_ws/build/turtlebot3/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

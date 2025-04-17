@@ -1,3 +1,1 @@
-
-# Response
-int32 position
+/home/duttaishan01/turtlebot3_ws/build/dynamixel_sdk_custom_interfaces/rosidl_cmake/srv/GetPosition_Response.msg

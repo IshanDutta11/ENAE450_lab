@@ -1,2 +1,2 @@
 # generated from colcon_core/shell/template/command_prefix.sh.em
-. "/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/turtlebot3_msgs/share/turtlebot3_msgs/package.sh"
+. "/home/duttaishan01/turtlebot3_ws/install/turtlebot3_msgs/share/turtlebot3_msgs/package.sh"
