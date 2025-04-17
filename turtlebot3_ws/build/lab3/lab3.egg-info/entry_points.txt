@@ -1,3 +1,0 @@
-[console_scripts]
-navigate_maze = lab3.navigate_maze:main
-
