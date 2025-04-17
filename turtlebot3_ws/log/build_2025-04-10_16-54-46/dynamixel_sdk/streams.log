@@ -1,0 +1,130 @@
+[0.093s] Invoking command in '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_teleop:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_example:/home/duttaishan01/turtlebot3_ws/install/lab2:/opt/ros/humble /usr/bin/cmake /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/src/DynamixelSDK/ros/dynamixel_sdk -DCMAKE_INSTALL_PREFIX=/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk
+[0.760s] -- The C compiler identification is GNU 11.4.0
+[1.354s] -- The CXX compiler identification is GNU 11.4.0
+[1.442s] -- Detecting C compiler ABI info
+[1.882s] -- Detecting C compiler ABI info - done
+[1.920s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.923s] -- Detecting C compile features
+[1.925s] -- Detecting C compile features - done
+[1.936s] -- Detecting CXX compiler ABI info
+[2.332s] -- Detecting CXX compiler ABI info - done
+[2.358s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.358s] -- Detecting CXX compile features
+[2.360s] -- Detecting CXX compile features - done
+[2.373s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[3.009s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[4.216s] -- Configuring done
+[4.249s] -- Generating done
+[4.266s] -- Build files have been written to: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk
+[4.288s] Invoked command in '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_teleop:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_example:/home/duttaishan01/turtlebot3_ws/install/lab2:/opt/ros/humble /usr/bin/cmake /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/src/DynamixelSDK/ros/dynamixel_sdk -DCMAKE_INSTALL_PREFIX=/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk
+[4.289s] Invoking command in '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_teleop:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_example:/home/duttaishan01/turtlebot3_ws/install/lab2:/opt/ros/humble /usr/bin/cmake --build /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk -- -j4 -l4
+[4.561s] [ 15%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/protocol1_packet_handler.cpp.o[0m
+[4.565s] [ 15%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/protocol2_packet_handler.cpp.o[0m
+[4.592s] [ 23%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/packet_handler.cpp.o[0m
+[4.723s] [ 23%] Built target ament_cmake_python_copy_dynamixel_sdk
+[6.040s] [ 30%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/group_sync_read.cpp.o[0m
+[6.522s] [ 38%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/group_sync_write.cpp.o[0m
+[7.021s] running egg_info
+[7.023s] creating dynamixel_sdk.egg-info
+[7.028s] [ 46%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/group_bulk_read.cpp.o[0m
+[7.028s] writing dynamixel_sdk.egg-info/PKG-INFO
+[7.030s] writing dependency_links to dynamixel_sdk.egg-info/dependency_links.txt
+[7.035s] writing top-level names to dynamixel_sdk.egg-info/top_level.txt
+[7.036s] writing manifest file 'dynamixel_sdk.egg-info/SOURCES.txt'
+[7.068s] reading manifest file 'dynamixel_sdk.egg-info/SOURCES.txt'
+[7.069s] writing manifest file 'dynamixel_sdk.egg-info/SOURCES.txt'
+[7.249s] [ 46%] Built target ament_cmake_python_build_dynamixel_sdk_egg
+[7.281s] [ 53%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/group_bulk_write.cpp.o[0m
+[10.393s] [ 61%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/group_fast_bulk_read.cpp.o[0m
+[10.937s] [ 69%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/group_fast_sync_read.cpp.o[0m
+[11.133s] [ 76%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/group_handler.cpp.o[0m
+[11.773s] [ 84%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/port_handler.cpp.o[0m
+[12.035s] [ 92%] [32mBuilding CXX object CMakeFiles/dynamixel_sdk.dir/src/dynamixel_sdk/port_handler_linux.cpp.o[0m
+[13.190s] [100%] [32m[1mLinking CXX shared library libdynamixel_sdk.so[0m
+[13.746s] [100%] Built target dynamixel_sdk
+[13.891s] Invoked command in '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_teleop:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_example:/home/duttaishan01/turtlebot3_ws/install/lab2:/opt/ros/humble /usr/bin/cmake --build /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk -- -j4 -l4
+[13.892s] Invoking command in '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_teleop:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_example:/home/duttaishan01/turtlebot3_ws/install/lab2:/opt/ros/humble /usr/bin/cmake --install /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk
+[13.977s] -- Install configuration: ""
+[13.978s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include/
+[13.979s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk
+[13.981s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/packet_handler.h
+[13.982s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_fast_bulk_read.h
+[13.982s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_handler.h
+[13.982s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_sync_write.h
+[13.982s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/port_handler_windows.h
+[13.989s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/protocol2_packet_handler.h
+[13.989s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_sync_read.h
+[13.993s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_bulk_read.h
+[13.994s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_fast_sync_read.h
+[13.999s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/port_handler_linux.h
+[13.999s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/port_handler.h
+[14.000s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/dynamixel_sdk.h
+[14.006s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/port_handler_mac.h
+[14.011s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/protocol1_packet_handler.h
+[14.011s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/group_bulk_write.h
+[14.011s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/include//dynamixel_sdk/port_handler_arduino.h
+[14.013s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/lib/libdynamixel_sdk.so
+[14.019s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/pythonpath.sh
+[14.020s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/pythonpath.dsv
+[14.021s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk-3.8.3-py3.10.egg-info
+[14.024s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk-3.8.3-py3.10.egg-info/top_level.txt
+[14.025s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk-3.8.3-py3.10.egg-info/SOURCES.txt
+[14.026s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk-3.8.3-py3.10.egg-info/PKG-INFO
+[14.034s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk-3.8.3-py3.10.egg-info/dependency_links.txt
+[14.034s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk
+[14.035s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_handler.cpp
+[14.037s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/port_handler_linux.cpp
+[14.037s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_bulk_read.cpp
+[14.039s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_sync_read.py
+[14.041s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_bulk_read.py
+[14.041s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/protocol2_packet_handler.cpp
+[14.044s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/protocol1_packet_handler.cpp
+[14.047s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_bulk_write.py
+[14.048s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_fast_sync_read.cpp
+[14.048s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_fast_bulk_read.cpp
+[14.051s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/__init__.py
+[14.051s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/packet_handler.cpp
+[14.053s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/protocol2_packet_handler.py
+[14.053s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/port_handler_arduino.cpp
+[14.057s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/port_handler.cpp
+[14.058s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/packet_handler.py
+[14.058s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_bulk_write.cpp
+[14.058s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/port_handler_mac.cpp
+[14.058s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/protocol1_packet_handler.py
+[14.059s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/port_handler_windows.cpp
+[14.062s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_sync_write.cpp
+[14.063s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/robotis_def.py
+[14.068s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_sync_write.py
+[14.068s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_sync_read.cpp
+[14.070s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/port_handler.py
+[14.342s] Listing '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk'...
+[14.342s] Compiling '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/__init__.py'...
+[14.342s] Compiling '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_bulk_read.py'...
+[14.342s] Compiling '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_bulk_write.py'...
+[14.342s] Compiling '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_sync_read.py'...
+[14.342s] Compiling '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/group_sync_write.py'...
+[14.343s] Compiling '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/packet_handler.py'...
+[14.343s] Compiling '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/port_handler.py'...
+[14.343s] Compiling '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/protocol1_packet_handler.py'...
+[14.343s] Compiling '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/protocol2_packet_handler.py'...
+[14.343s] Compiling '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/local/lib/python3.10/dist-packages/dynamixel_sdk/robotis_def.py'...
+[14.359s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/library_path.sh
+[14.359s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/library_path.dsv
+[14.359s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/ament_index/resource_index/package_run_dependencies/dynamixel_sdk
+[14.363s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/ament_index/resource_index/parent_prefix_path/dynamixel_sdk
+[14.363s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/ament_prefix_path.sh
+[14.364s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/ament_prefix_path.dsv
+[14.364s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/path.sh
+[14.364s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/environment/path.dsv
+[14.370s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/local_setup.bash
+[14.371s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/local_setup.sh
+[14.372s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/local_setup.zsh
+[14.372s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/local_setup.dsv
+[14.372s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/package.dsv
+[14.375s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/ament_index/resource_index/packages/dynamixel_sdk
+[14.376s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/ament_cmake_export_include_directories-extras.cmake
+[14.377s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/ament_cmake_export_libraries-extras.cmake
+[14.377s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/dynamixel_sdkConfig.cmake
+[14.380s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/cmake/dynamixel_sdkConfig-version.cmake
+[14.380s] -- Installing: /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/install/dynamixel_sdk/share/dynamixel_sdk/package.xml
+[14.390s] Invoked command in '/home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_teleop:/home/duttaishan01/turtlebot3_ws/install/turtlebot3_example:/home/duttaishan01/turtlebot3_ws/install/lab2:/opt/ros/humble /usr/bin/cmake --install /home/duttaishan01/robotics_course/enae450/turtlebot3_ws/build/dynamixel_sdk
