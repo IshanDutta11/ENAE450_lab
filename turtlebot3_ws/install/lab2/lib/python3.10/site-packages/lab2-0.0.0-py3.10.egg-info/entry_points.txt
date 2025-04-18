@@ -1,3 +1,0 @@
-[console_scripts]
-move_node = lab2.move_node:main
-
