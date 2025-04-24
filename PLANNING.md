@@ -9,12 +9,13 @@ The critical components will be our path planning (above), pose estimation (x,y,
 
 There is a chance that this behavior tree style model will be flagged as hardcoding. One idea (which Ishan I think thought of somehting similar for lab 3) is at any point, reduce directions into 3 choices, forwards, left, or right, . At any moment pick the direction that is farthest away. Turn towards that direction and go forward, keep repeating while going forward, not while turning. We would need a protection to prevent the robot from turning, getting a new backwards and the old backwards suddently becomes the furthest away. This algorithm works because of how the mazes are built, it is typically a terrible idea. CMSC451 would call this a "greedy algorithm," in that it solves the problem by selecting a characteristic and maximizes it. In maze 3, there are actually 3 points where the wrong direction is nearly equal to the current direction, so there would need to be a check that the direction is a certain threshold greater just in case.
 
-# Final Project Soha & Ishan
-Wall following, non optimal. We need shortest path and raw awall follow misses that. 
+# Final Project Soha & Ishaan
+Wall following, non optimal. We need shortest path and raw wall follow misses that. 
 
-# Final Project Soha & Ishan & Sai
+# Final Project Soha & Ishaan & Sai
 Wall following but with all 4 directions (robot_cardinal). Operate with states. At each state trigger a turn. The trigger condition is being debated, should we use all 4 directions or just one for wall follow. All 4 is more fundemental to do, and we can abstract with Sai's lidar package idea. 
 Simplifying to 4 directions opens us up to variations in lidar. We shouldn't seek odom off the top because it overcomplicateds, and obviously lidar for imu data is inherantly and overcomplication. 
+No more timers. Timers are hardcoding essentially. 
 
 # Lab 3
 Sai: The easiest idea is to act in "states" so to say. Easiest implementation would use a match statement. State 1 would go forward and read the front facing values until we are 5cm from the wall. Then trigger State 2. State 2 will turn 90 degrees left in place, then trigger state 3. State 3 will repeat State 1. State 4 will turn 90 degrees right in place. State 5 reaches the end. This is not hardcoding. We know the map already.
