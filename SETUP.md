@@ -1,3 +1,9 @@
+# Cleanup
+1) Disconnect from everything
+2) Turn off robot
+3) Disconnect battery and put in charging bin
+4) Put robot on shelf
+
 # Turtlebot3 Setup
 Get Ubuntu or a VM or something, I don't know how to fix Windows, Mac might actually be fine. Have ROS2 Humble and get the following packages. 
 ```
