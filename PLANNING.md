@@ -1,4 +1,4 @@
-Description: We are given 3 maps. We need to start at one end and end at the other.
+Description: We are given 3 maps. We need to start at one end (marked red) and end at the other (marked green).
 
 ![](pictures/final_mazes.png)
 
