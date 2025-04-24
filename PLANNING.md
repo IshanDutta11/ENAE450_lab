@@ -11,7 +11,7 @@ There is a chance that this behavior tree style model will be flagged as hardcod
 
 # Lab 3
 
-Sai: The easiest idea is to act in "states" so to say. Easiest implementation would use a match statement. State 1 would go forward and read the front facing values until we are 5cm from the wall. Then trigger State 2. State 2 will turn 90 degrees left in place, then trigger state 3. State 3 will repeat State 1. State 4 will turn 90 degrees right in place. State 5 reaches the end. This is not hardcoding. We know the map already. 
+Sai: The easiest idea is to act in "states" so to say. Easiest implementation would use a match statement. State 1 would go forward and read the front facing values until we are 5cm from the wall. Then trigger State 2. State 2 will turn 90 degrees left in place, then trigger state 3. State 3 will repeat State 1. State 4 will turn 90 degrees right in place. State 5 reaches the end. This is not hardcoding. We know the map already. (our )
 
 Freidrich: Look left/right and follow it to the end. Maintain didstance from wall. 
 
