@@ -14,6 +14,8 @@ Check with Abrar about how much of the controls we can abstract and the other fo
 
 Be sure to comment your code. Don't use any timers. 
 
+Use the turtlebot sim instructions
+
 # Daily Logs:
 2025/4/24 - We discussed hte various algorithmic ideas. TLDR everyone is cringe, so we modified our ideas to make more sense. We will operate from a 4 cardinal directions and states perspective, no intelligent controls framwork. We wont do anyhting by timer, we will make ordered decisions by matching to the approximate NSEW match. Ishann will work on the ros interacing, Soham the algorithm,and Sai the lidar but he also will do weird stuff on his own time that may or may not work.
 

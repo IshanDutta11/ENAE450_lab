@@ -15,12 +15,14 @@ class MoveNode(Node):
 
     def move_command(self):
         msg = Twist()
-        msg.linear.x = 0.3
+        msg.linear.x = 0.0
+        msg.angular.z = 1.182
         self.publisher_.publish(msg)
 
-        time.sleep(1)
+        time.sleep(.9)
 
         msg.linear.x = 0.0
+        msg.angular.z = 0.0
         self.publisher_.publish(msg)
 
 def main(args=None):

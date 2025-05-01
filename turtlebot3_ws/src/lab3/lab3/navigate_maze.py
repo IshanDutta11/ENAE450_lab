@@ -15,7 +15,8 @@ class NavigateMaze(Node):
         timer_period = 1  # seconds
         self.timer = self.create_timer(timer_period, self.move_command)
 
-        self.stopping_distance = 0.2
+        self.stopping_distance = 0.3
+        self.max = 0.2
         self.distances=[]
 
     def move_command(self):
@@ -41,21 +42,31 @@ class NavigateMaze(Node):
             msg.linear.x = 0.0
         else:
             if(self.distances[360] > self.stopping_distance):
-                msg.linear.x = 0.3
-                print("move")
+                msg.linear.z = 1.6
+                print("Distance not detected")
             else:
-                msg.linear.x = 0.0
-                
-                if(self.distances[180] > self.distances[540]):
-                    msg.linear.z = 3.14
-                    self.publisher_.publish(msg)
+                msg.linear.x = -self.max
 
-                else:
-                    msg.linear.z = -3.14
-                    self.publisher_.publish(msg)
+
+            # if(self.distances[360] > self.stopping_distance):
+            #     msg.linear.x = 0.3
+            #     print("move")
+            # else:
+            #     msg.linear.x = 0.0
+            #     print("Dont move")
+            #     if(self.distances[180] > self.distances[540]):
+            #         msg.linear.z = 1.6
+            #         self.publisher_.publish(msg)
+            #         print("Turn right")
+
+            #     else:
+            #         msg.linear.z = -1.6
+            #         self.publisher_.publish(msg)
+            #         print("Turn left")
                 
-                time.sleep(1)
-                msg.linear.z = 0
+            #     time.sleep(1)
+            #     msg.linear.z = 0.0
+            #     print("stop_turning")
                 
         self.publisher_.publish(msg)
 
