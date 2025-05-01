@@ -41,14 +41,15 @@ class CheckpointNav(Node):
         self.subscription = self.create_subscription(LaserScan, 'scan', self.retrieve_distances, 10)
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
         self.checkpoints = deque([]) #POPULATE WITH STATES LATER
-        self.state = (None, None, None, None)
-        self.threshold = 0 #account for robot dims so +15ish cm
+        self.state = (None, None, None, None) #left, right, front, back (540, 180, 360, 0)
+        self.dist_threshold = 0 #account for robot dims so +15ish cm
+        self.halfangle_threshold = 1
         self.timer = self.create_timer(0.1, self.control_loop)
         
 
     def reached_checkpoint(self, goalstate):
         for actual, target in zip(self.state, goalstate):
-            if actual is None or abs(actual - target) > self.threshold:
+            if actual is None or abs(actual - target) > self.dist_threshold:
                 return False
         return True
     
@@ -83,7 +84,14 @@ class CheckpointNav(Node):
 
 
     def retrieve_distances(self, msg):
-        self.state = (msg.ranges[180], msg.ranges[540], msg.ranges[360], msg.ranges[719])
+        dirs = (540, 180, 360, 0)
+        
+        for i,dir in enumerate(dirs):
+            total = 0
+            for i in range(dir - self.halfangle_threshold, dir + self.halfangle_threshold):
+                if msg[i] != float('inf'):
+                    total += msg[i]
+            self.state[i] = total/len(total)
             
        
 def main(args=None):
