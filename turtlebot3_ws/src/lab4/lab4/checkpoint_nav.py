@@ -102,14 +102,14 @@ class CheckpointNav(Node):
     def retrieve_distances(self, msg):
         dirs = (540, 180, 360, 0)
         
-        for i,dir in enumerate(dirs):
+        for j,dir in enumerate(dirs):
             total = 0
             count = 0
-            for i in range(dir - self.halfangle_threshold, dir + self.halfangle_threshold):
+            for i in range(dir - self.halfangle_threshold, dir + self.halfangle_threshold + 1):
                 if msg.ranges[i] != float('inf'):
                     total += msg.ranges[i]
                     count += 1
-            self.state[i] = total/count
+            self.state[j] = total/count if count > 0 else float('inf')
             
        
 def main(args=None):
