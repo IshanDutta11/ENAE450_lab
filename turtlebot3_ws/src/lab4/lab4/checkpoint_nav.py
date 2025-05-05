@@ -40,15 +40,27 @@ class CheckpointNav(Node):
         super().__init__("checkpoint_nav")
         self.subscription = self.create_subscription(LaserScan, 'scan', self.retrieve_distances, 10)
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
-        self.checkpoints = deque([]) #POPULATE WITH STATES LATER
+        self.checkpoints = deque([
+            ((.75,.75,3.45,.45),(.75,.75,3.45,.45),0),
+            ((.75,.75,1.8,2.1),(2.1,1.8,.75,.75),1.86),
+            ((.3,1.2,.3,1.2),(.3,1.2,1.2,.3),-1.86),
+            ((1.2,1.2,.3,1.2),(1.2,.3,1.2,1.2),1.86),
+            ((2.1,.9,.45,1.95),(.45,1.95,.9,2.1),-1.86),
+            ((1.05,.45,.6,2.25),(2.25,.6,1.05,.45),1.86),
+            ((.3,.6,.3,1.2),(.3,1.2,.6,.3),-1.86),
+            ((float('inf'),.3,.3,.6),(.6,.3,float('inf'),.3),1.86),
+            ((.6,.6,float('inf'),1.05),(.6,.6,float('inf'),1.05),0)            
+            ])
         self.state = (None, None, None, None) #left, right, front, back (540, 180, 360, 0)
-        self.dist_threshold = 0 #account for robot dims so +15ish cm
+        self.dist_threshold = 0.2 #account for robot dims so +15ish cm
         self.halfangle_threshold = 1
         self.timer = self.create_timer(0.1, self.control_loop)
         
 
     def reached_checkpoint(self, goalstate):
         for actual, target in zip(self.state, goalstate):
+            if actual == float('inf'):
+                continue
             if actual is None or abs(actual - target) > self.dist_threshold:
                 return False
         return True
@@ -71,7 +83,7 @@ class CheckpointNav(Node):
         
         #otherwise we've entered a checkpoint
         self.get_logger().info(f'Checkpoint Reached. Turning by angle: {angle} rad')
-        msg.linear.z = angle
+        msg.angular.z = angle
         self.publisher.publish(msg)
         
         if self.reached_checkpoint(final): #want to consume the checkpoint
