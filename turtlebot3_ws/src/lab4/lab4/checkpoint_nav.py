@@ -55,7 +55,7 @@ class CheckpointNav(Node):
             ((float('inf'),.3,.3,.6),(.6,.3,float('inf'),.3),1.86),
             ((.6,.6,float('inf'),1.05),(.6,.6,float('inf'),1.05),0)            
             ])
-        self.state = (None, None, None, None) #left, right, front, back (540, 180, 360, 0)
+        self.state = [None]*4 #left, right, front, back (540, 180, 360, 0)
         self.dist_threshold = 0.2 #account for robot dims so +15ish cm
         self.halfangle_threshold = 1
         self.timer = self.create_timer(0.05, self.control_loop)
@@ -104,10 +104,12 @@ class CheckpointNav(Node):
         
         for i,dir in enumerate(dirs):
             total = 0
+            count = 0
             for i in range(dir - self.halfangle_threshold, dir + self.halfangle_threshold):
-                if msg[i] != float('inf'):
-                    total += msg[i]
-            self.state[i] = total/len(total)
+                if msg.ranges[i] != float('inf'):
+                    total += msg.ranges[i]
+                    count += 1
+            self.state[i] = total/count
             
        
 def main(args=None):
