@@ -40,6 +40,10 @@ class CheckpointNav(Node):
         super().__init__("checkpoint_nav")
         self.subscription = self.create_subscription(LaserScan, 'scan', self.retrieve_distances, 10)
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
+        
+        # these are all approximated based off the diagram at the following link:
+        # https://docs.google.com/drawings/d/1gDSnVN_PaYoXHPEN8NycJxKMBHnt_hwfdg-CdWP1--g/edit?usp=sharing
+        # rests on the assumption that the blocks are 30 x 30 cm and that lidar measurments are in meters
         self.checkpoints = deque([
             ((.75,.75,3.45,.45),(.75,.75,3.45,.45),0),
             ((.75,.75,1.8,2.1),(2.1,1.8,.75,.75),1.86),
@@ -54,12 +58,12 @@ class CheckpointNav(Node):
         self.state = (None, None, None, None) #left, right, front, back (540, 180, 360, 0)
         self.dist_threshold = 0.2 #account for robot dims so +15ish cm
         self.halfangle_threshold = 1
-        self.timer = self.create_timer(0.1, self.control_loop)
+        self.timer = self.create_timer(0.05, self.control_loop)
         
 
     def reached_checkpoint(self, goalstate):
         for actual, target in zip(self.state, goalstate):
-            if actual == float('inf'):
+            if actual == float('inf'): #inf is just a possibility
                 continue
             if actual is None or abs(actual - target) > self.dist_threshold:
                 return False
