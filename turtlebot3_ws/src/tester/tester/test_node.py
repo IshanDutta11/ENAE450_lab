@@ -5,6 +5,9 @@ from geometry_msgs.msg import Twist
 from sensor_msgs.msg import LaserScan
 
 from collections import deque
+import time
+
+import numpy as np
 
 #list of checkpoints in order, each checkpoint is a tuple
 #keep track of current left, right, forward, back as "state"
@@ -35,80 +38,119 @@ from collections import deque
 
 
 class CheckpointNav(Node):
-    
+
     def __init__(self):
         super().__init__("checkpoint_nav")
         self.subscription = self.create_subscription(LaserScan, 'scan', self.retrieve_distances, 10)
-        # self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
-        # self.checkpoints = deque([]) #POPULATE WITH STATES LATER
-        self.state = (10.0000000000000, 10.0000000000000, 10.0000000000000, 10.0000000000000)
-        self.threshold = 0 #account for robot dims so +15ish cm
-        # self.timer = self.create_timer(0.1, self.control_loop)
-        
+        self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
 
-    def reached_checkpoint(self, goalstate):
-        self.get_logger().info(f'CHECKPOINT')
-        # for actual, target in zip(self.state, goalstate):
-        #     if actual is None or abs(actual - target) > self.threshold:
-        #         return False
-        # return True
-    
+        self.state = (None, None, None, None) #left, right, front, back (540, 180, 360, 0) 
+        self.checkpoint = 0 # state
         
+        self.latest_ranges = [-1.0] * 720
+
+        self.small_offset = -4 #degree variance old
+        self.big_offset = 4 #degree variance old
+
+        self.largest_i = -1
+        self.smallest_i = -1 # range left old
+
+        self.timer = self.create_timer(0.1, self.control_loop)
+
+    def move_robot (self, x, a):
+        msg = Twist()
+        msg.linear.x = x
+        msg.angular.z = a
+        self.publisher.publish(msg)
+        
+    def turn_robot (self):
+        turn_left = 1.82
+        turn_right = -1.82
+
+        deg_change = (self.largest_i - 360)/2
+        angular_speed = 104
+        duration = abs(deg_change)/angular_speed    
+
+        if(deg_change < 0):
+            self.move_robot(0.0, turn_right)
+            time.sleep(duration)
+            self.move_robot(0.0, 0.0)
+        elif(deg_change > 0):
+            self.move_robot(0.0, turn_left)
+            time.sleep(duration)
+            self.move_robot(0.0, 0.0)
+
+    def largest_i_over_3_1 (self):
+        reduced = self.latest_ranges[260:541]
+        reduced = [-1.0 if x > 6 else x for x in reduced]
+        x = 0
+        while (x < len(reduced)):
+            self.largest_i = 260 + x
+            if (reduced[x] >= 3.0):
+                return True
+            else:
+                x = x +1
+
+        return False
+    
+    def largest_i_over_3_2 (self):
+        reduced = self.latest_ranges[440:631]
+        reduced = [-1.0 if x > 6.0 else x for x in reduced]
+        x = 0
+        while (x < len(reduced)):
+            self.largest_i = 440 + x
+            if (reduced[x] >= 3.0):
+                return True
+            else:
+                x = x +1
+
+        return False
+
     #this is being called repetitively at a very short interval
     def control_loop(self):
-        self.get_logger().info(f'')
-        # if not self.checkpoints:
-        #     self.publisher.publish(Twist()) #stop
-        #     self.get_logger().info('All checkpoints done')
-        #     return
-        
-        # init, final, angle = self.checkpoints[0]
-        # msg = Twist()
-        
-        # if not self.reached_checkpoint(init):
-        #     msg.linear.x = 0.26
-        #     self.publisher.publish(msg)
-        #     return
-        
-        #otherwise we've entered a checkpoint
-        # self.get_logger().info(f'Checkpoint Reached. Turning by angle: {angle} rad')
-        # msg.linear.z = angle
-        # self.publisher.publish(msg)
-        
-        # if self.reached_checkpoint(final): #want to consume the checkpoint
-        #     #we've finished turning
-        #     self.get_logger().info("Turn Complete.")
-        #     #need to stop
-        #     self.publisher.publish(Twist())
-        #     self.checkpoints.popleft()
-        
+        self.get_logger().info(f' Checkpoint {self.checkpoint} Desired Forward {self.largest_i}')
+
+        match(self.checkpoint):
+            case 0: #Pose: random orientation, no movement; FIll lidar ranges, get farthest (rightmost) angle, turn the robot, stop turning.
+                if (self.state[0] != None):
+                    if(self.largest_i_over_3_1()):
+                        # self.checkpoint = self.checkpoint
+                        self.checkpoint = self.checkpoint + 1
+                        self.turn_robot()
+            case 1: #Pose: facing farthest valid distance, no movement; Start moving forward. 
+                self.move_robot(0.26, 0.0)
+                self.checkpoint = self.checkpoint + 1
+            case 2: #Pose: facing farthest valid distance, moving forward; Stop when top_right quadrant is close to the halfway wall.
+                reduced = self.latest_ranges[270:450]
+                reduced = [-1.0 if d > 6 else d for d in reduced]
+                counter = 0
+                for d in reduced:
+                    if d < 0.33:
+                        counter = counter + 1
+                    if counter >=5:
+                        self.move_robot(0.0, 0.0)
+                        self.checkpoint = self.checkpoint + 1
+                        break
+            case 3: # Pose: facing wall in the way no movement; turn towards next furthest, stop turning
+                self.largest_i_over_3_2()
+                # self.smallest_i_over_3()
+                new_forward = int(self.largest_i + 16)
+                self.largest_i = new_forward
+                self.turn_robot()
+                self.checkpoint = self.checkpoint + 1
+            case 4: #Pose: facing the second furthest valid distance, no movement; Start moving forward. 
+                self.move_robot(0.26, 0.0)
+            case _:
+                self.move_robot(0.0, 0.0)
 
 
     def retrieve_distances(self, msg):
-        if len(msg.ranges) ==720 :
-            req_ranges[540, 180, 360, 0]
-
-
-            self.state = (msg.ranges[540], msg.ranges[180], msg.ranges[360], msg.ranges[719]) # 
+        if len(msg.ranges) == 720 :
+            self.latest_ranges = msg.ranges
+            self.state = (msg.ranges[540], msg.ranges[180], msg.ranges[360], msg.ranges[0]) # left, right, front, back
             # self.get_logger().info(f'Lidar Reading: Left {self.state[0]} Right {self.state[1]} Front {self.state[2]} Back {self.state[3]}')
-            # self.get_logger().info(f'Back_-1 {msg.ranges[719]} Back {msg.ranges[0]} Back1_+1 {msg.ranges[1]}')
-            self.get_logger().info(f'Back {(msg.ranges[0])}')
-            self.get_logger().info(f'Back {type(msg.ranges[0])}')
-        else :
-            self.get_logger().info(f"Buggin like sai")
+       
             
-    def refine_lidar_reading(self, msg, req):
-        for x in range(0,4):
-            value = float('inf')
-            if(msg.ranges[req[x]] == value):
-                before = req[x] -1
-                if(before == -1) : 
-                    before = 719
-                after = req[x]+1
-
-            self.state[x] = value
-
-
        
 def main(args=None):
     rclpy.init(args=args)
@@ -122,4 +164,3 @@ def main(args=None):
                 
 if __name__ == '__main__':
     main()
-    

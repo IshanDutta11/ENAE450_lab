@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'tester'
+package_name = 'Final'
 
 setup(
     name=package_name,
@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'test_node = tester.test_node:main'
+            'four_states = Final.four_states:main'
         ],
     },
 )

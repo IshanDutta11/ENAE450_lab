@@ -16,7 +16,7 @@ class MoveNode(Node):
     def move_command(self):
         msg = Twist()
         msg.linear.x = 0.0
-        msg.angular.z = 1.182
+        msg.angular.z = 1.0
         self.publisher_.publish(msg)
 
         time.sleep(.9)

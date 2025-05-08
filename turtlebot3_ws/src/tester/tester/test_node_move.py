@@ -5,6 +5,7 @@ from geometry_msgs.msg import Twist
 from sensor_msgs.msg import LaserScan
 
 from collections import deque
+import time
 
 #list of checkpoints in order, each checkpoint is a tuple
 #keep track of current left, right, forward, back as "state"
@@ -41,74 +42,49 @@ class CheckpointNav(Node):
         self.subscription = self.create_subscription(LaserScan, 'scan', self.retrieve_distances, 10)
         self.publisher = self.create_publisher(Twist, 'cmd_vel', 10)
         self.checkpoints = deque([]) #POPULATE WITH STATES LATER
-        self.state = (10.0000000000000, 10.0000000000000, 10.0000000000000, 10.0000000000000)
-        self.threshold = 0 #account for robot dims so +15ish cm
-        self.timer = self.create_timer(0.1, self.control_loop)
+        self.state = (None, None, None, None) #left, right, front, back (540, 180, 360, 0)
+        self.dist_threshold = 0.1 #account for robot dims so +15ish cm
+        self.halfangle_threshold = 1
         
+        time.sleep(1.0) 
+        self.initial_movement()
 
-    def reached_checkpoint(self, goalstate):
-        self.get_logger().info(f'CHECKPOINT')
-        for actual, target in zip(self.state, goalstate):
-            if actual is None or abs(actual - target) > self.threshold:
+        self.timer = self.create_timer(0.1, self.control_loop)
+       
+    def intial_movement(self):
+        self.goalstate = (self.state[2], self.state[1], self.state[3], self.state[0])
+        msg = Twist()
+        msg.linear.x = 0.0
+        msg.angular.z = 1.182
+        self.publisher_.publish(msg)
+
+    def reached_checkpoint(self):
+        for actual, target in zip(self.state, self.goalstate):
+            if actual is None or abs(actual - target) > self.dist_threshold:
                 return False
         return True
     
         
     #this is being called repetitively at a very short interval
     def control_loop(self):
-        self.get_logger().info(f'')
-        # if not self.checkpoints:
-        #     self.publisher.publish(Twist()) #stop
-        #     self.get_logger().info('All checkpoints done')
-        #     return
+        msg = Twist()
         
-        # init, final, angle = self.checkpoints[0]
-        # msg = Twist()
-        
-        # if not self.reached_checkpoint(init):
-        #     msg.linear.x = 0.26
-        #     self.publisher.publish(msg)
-        #     return
-        
-        #otherwise we've entered a checkpoint
-        # self.get_logger().info(f'Checkpoint Reached. Turning by angle: {angle} rad')
-        # msg.linear.z = angle
-        # self.publisher.publish(msg)
-        
-        # if self.reached_checkpoint(final): #want to consume the checkpoint
-        #     #we've finished turning
-        #     self.get_logger().info("Turn Complete.")
-        #     #need to stop
-        #     self.publisher.publish(Twist())
-        #     self.checkpoints.popleft()
-        
+        if(self.reached_checkpoint):
+            msg.linear.x = 0.0
+            msg.angular.z = 0.0
+            self.publisher_.publish(msg)
+ 
 
 
     def retrieve_distances(self, msg):
         if len(msg.ranges) ==720 :
-            req_ranges = [540, 180, 360, 0]
-
-
-            self.state = (msg.ranges[req_ranges[0]], msg.ranges[req_ranges[1]], msg.ranges[req_ranges[2]], msg.ranges[req_ranges[3]]) # 
+            self.state = (msg.ranges[540], msg.ranges[180], msg.ranges[360], msg.ranges[0]) # right is 180 
             # self.get_logger().info(f'Lidar Reading: Left {self.state[0]} Right {self.state[1]} Front {self.state[2]} Back {self.state[3]}')
             # self.get_logger().info(f'Back_-1 {msg.ranges[719]} Back {msg.ranges[0]} Back1_+1 {msg.ranges[1]}')
-            self.get_logger().info(f'Back {(msg.ranges[0])}')
-            self.get_logger().info(f'Back {type(msg.ranges[0])}')
+            self.get_logger().info(f'Back_-1 {msg.ranges[719]} Back {msg.ranges[0]} Back1_+1 {msg.ranges[1]}')
         else :
             self.get_logger().info(f"Buggin like sai")
             
-    def refine_lidar_reading(self, msg, req):
-        for x in range(0,4):
-            value = float('inf')
-            if(msg.ranges[req[x]] == value):
-                before = req[x] -1
-                if(before == -1) : 
-                    before = 719
-                after = req[x]+1
-
-            self.state[x] = value
-
-
        
 def main(args=None):
     rclpy.init(args=args)
@@ -123,3 +99,4 @@ def main(args=None):
 if __name__ == '__main__':
     main()
     
+ 
