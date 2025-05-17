@@ -2,7 +2,7 @@ import os
 from glob import glob
 from setuptools import find_packages, setup
 
-package_name = 'hw5'
+package_name = 'maze_simulation'
 
 setup(
     name=package_name,
@@ -28,6 +28,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'simulation_node = maze_simulation.simulation_nav:main',
         ],
     },
 )
