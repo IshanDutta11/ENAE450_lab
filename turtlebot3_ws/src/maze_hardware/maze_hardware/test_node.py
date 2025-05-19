@@ -57,20 +57,23 @@ class CheckpointNav(Node):
 
         self.timer = self.create_timer(0.1, self.control_loop)
 
+    # accepts linear and angular velocity, publishes them to robot
     def move_robot (self, x, a):
         msg = Twist()
         msg.linear.x = x
         msg.angular.z = a
         self.publisher.publish(msg)
         
+    # compares desired and actual headings and turns
     def turn_robot (self):
         turn_left = 1.82
         turn_right = -1.82
 
         deg_change = (self.largest_i - 360)/2
         angular_speed = 104
-        duration = abs(deg_change)/angular_speed    
+        duration = abs(deg_change)/angular_speed # how many seconds are needed to traverse the distance   
 
+        # depending on parity of the degree change, turn left or right for the duration
         if(deg_change < 0):
             self.move_robot(0.0, turn_right)
             time.sleep(duration)
@@ -81,26 +84,26 @@ class CheckpointNav(Node):
             self.move_robot(0.0, 0.0)
 
     def largest_i_over_3_1 (self):
-        reduced = self.latest_ranges[260:541]
+        reduced = self.latest_ranges[260:541] # check northeast through west
         reduced = [-1.0 if x > 6 else x for x in reduced]
         x = 0
         while (x < len(reduced)):
-            self.largest_i = 260 + x
+            self.largest_i = 260 + x # declare the point
             if (reduced[x] >= 3.0):
-                return True
+                return True #end function if the point is good
             else:
                 x = x +1
 
         return False
     
     def largest_i_over_3_2 (self):
-        reduced = self.latest_ranges[440:631]
+        reduced = self.latest_ranges[440:631] # check northwest through southwest
         reduced = [-1.0 if x > 6.0 else x for x in reduced]
         x = 0
         while (x < len(reduced)):
-            self.largest_i = 440 + x
+            self.largest_i = 440 + x # declare the point
             if (reduced[x] >= 3.0):
-                return True
+                return True #end function if the point is good
             else:
                 x = x +1
 
@@ -140,10 +143,10 @@ class CheckpointNav(Node):
                 self.checkpoint = self.checkpoint + 1
             case 4: #Pose: facing the second furthest valid distance, no movement; Start moving forward. 
                 self.move_robot(0.26, 0.0)
-            case _:
+            case _: #default: do nothing
                 self.move_robot(0.0, 0.0)
 
-
+    # accept the msg from the lidar publisher and use it accordingly, saves time to store it and mess with the stored value.
     def retrieve_distances(self, msg):
         if len(msg.ranges) == 720 :
             self.latest_ranges = msg.ranges
